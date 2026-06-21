@@ -269,7 +269,7 @@ public class ReplayManager : MonoBehaviour
     }
 
 
-    private static void Reset()
+    public static void Reset()
     {
         IsReplayMode = false;
         CurrentReplay = null;

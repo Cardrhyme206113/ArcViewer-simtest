@@ -564,7 +564,7 @@ public static class ReplayDecoder
         }
     }
 
-    private static ReplayInfo DecodeInfo(byte[] buffer, ref int pointer)
+    public static ReplayInfo DecodeInfo(byte[] buffer, ref int pointer)
     {
         ReplayInfo result = new ReplayInfo();
 
@@ -600,7 +600,7 @@ public static class ReplayDecoder
         return result;
     }
 
-    private static List<Frame> DecodeFrames(byte[] buffer, ref int pointer)
+    public static List<Frame> DecodeFrames(byte[] buffer, ref int pointer)
     {
         int length = DecodeInt(buffer, ref pointer);
         List<Frame> result = new List<Frame>();
@@ -614,7 +614,7 @@ public static class ReplayDecoder
         return result;
     }
 
-    private static Frame DecodeFrame(byte[] buffer, ref int pointer)
+    public static Frame DecodeFrame(byte[] buffer, ref int pointer)
     {
         Frame result = new Frame();
         result.time = DecodeFloat(buffer, ref pointer);
@@ -626,7 +626,7 @@ public static class ReplayDecoder
         return result;
     }
 
-    private static List<NoteEvent> DecodeNotes(byte[] buffer, ref int pointer)
+    public static List<NoteEvent> DecodeNotes(byte[] buffer, ref int pointer)
     {
         int length = DecodeInt(buffer, ref pointer);
         List<NoteEvent> result = new List<NoteEvent>();
@@ -637,7 +637,7 @@ public static class ReplayDecoder
         return result;
     }
 
-    private static List<WallEvent> DecodeWalls(byte[] buffer, ref int pointer)
+    public static List<WallEvent> DecodeWalls(byte[] buffer, ref int pointer)
     {
         int length = DecodeInt(buffer, ref pointer);
         List<WallEvent> result = new List<WallEvent>();
@@ -653,7 +653,7 @@ public static class ReplayDecoder
         return result;
     }
 
-    private static List<AutomaticHeight> DecodeHeight(byte[] buffer, ref int pointer)
+    public static List<AutomaticHeight> DecodeHeight(byte[] buffer, ref int pointer)
     {
         int length = DecodeInt(buffer, ref pointer);
         List<AutomaticHeight> result = new List<AutomaticHeight>();
@@ -667,7 +667,7 @@ public static class ReplayDecoder
         return result;
     }
 
-    private static List<Pause> DecodePauses(byte[] buffer, ref int pointer)
+    public static List<Pause> DecodePauses(byte[] buffer, ref int pointer)
     {
         int length = DecodeInt(buffer, ref pointer);
         List<Pause> result = new List<Pause>();
@@ -681,7 +681,7 @@ public static class ReplayDecoder
         return result;
     }
 
-    private static SaberOffsets DecodeSaberOffsets(byte[] buffer, ref int pointer)
+    public static SaberOffsets DecodeSaberOffsets(byte[] buffer, ref int pointer)
     {
         var result = new SaberOffsets();
         result.LeftSaberLocalPosition = DecodeVector3(buffer, ref pointer);
@@ -691,7 +691,7 @@ public static class ReplayDecoder
         return result;
     }
 
-    private static Dictionary<string, byte[]> DecodeCustomData(byte[] buffer, ref int pointer)
+    public static Dictionary<string, byte[]> DecodeCustomData(byte[] buffer, ref int pointer)
     {
         var result = new Dictionary<string, byte[]>();
         var count = DecodeInt(buffer, ref pointer);
@@ -703,7 +703,7 @@ public static class ReplayDecoder
         return result;
     }
 
-    private static NoteEvent DecodeNote(byte[] buffer, ref int pointer)
+    public static NoteEvent DecodeNote(byte[] buffer, ref int pointer)
     {
         NoteEvent result = new NoteEvent();
         result.noteID = DecodeInt(buffer, ref pointer);
@@ -722,7 +722,7 @@ public static class ReplayDecoder
         return result;
     }
 
-    private static NoteCutInfo DecodeCutInfo(byte[] buffer, ref int pointer)
+    public static NoteCutInfo DecodeCutInfo(byte[] buffer, ref int pointer)
     {
         NoteCutInfo result = new NoteCutInfo();
         result.speedOK = DecodeBool(buffer, ref pointer);

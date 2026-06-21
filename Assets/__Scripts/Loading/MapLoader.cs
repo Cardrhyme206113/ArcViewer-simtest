@@ -628,6 +628,50 @@ public class MapLoader : MonoBehaviour
     }
 
 
+    public void HandleNewBsorV1Stream(Replay streamedReplay)
+    {
+        Loading = true;
+        UIStateManager.CurrentState = UIState.MapSelection;
+
+        ReplayManager.Reset();
+        StartCoroutine(SetReplayCoroutine(streamedReplay, null, null));
+    }
+
+
+    public void StartBsorV1StreamURI(Uri baseUrl)
+    {
+        // We need to replace the url with the proper websocket connection
+        string[] args = baseUrl.Query.TrimStart('?').Split('&');
+
+        int playerID = -1;
+        foreach(string arg in args)
+        {
+            if(arg.StartsWith("playerId"))
+            {
+                string idString = arg.TrimStart("playerId=");
+                int.TryParse(idString, out playerID);
+                break;
+            }
+        }
+
+        if(playerID < 0)
+        {
+            Debug.LogWarning("No valid player ID argument in stream URL!");
+            CancelMapLoading();
+            return;
+        }
+
+        Uri uri = new Uri($"wss://sockets.api.beatleader.com/stream/player/listen/");
+
+        Debug.Log($"Starting bsorV1 stream from uri: {uri}");
+        LoadingMessage = "Connecting";
+        Loading = true;
+
+        BsorV1Stream stream = new BsorV1Stream(uri, playerID, HandleNewBsorV1Stream);
+        ReplaySourceHandler.SetStream(stream);
+    }
+
+
     private void SetMap(LoadedMap newMap)
     {
         StopAllCoroutines();
@@ -766,11 +810,20 @@ public class MapLoader : MonoBehaviour
                 return;
             }
 
-            if(!ReplayManager.IsReplayMode && noQuery.EndsWith(".bsor", StringComparison.InvariantCultureIgnoreCase))
+            if(!ReplayManager.IsReplayMode)
             {
-                StartCoroutine(LoadReplayURLCoroutine(decodedURL));
-                UrlArgHandler.LoadedReplayURL = decodedURL;
-                return;
+                if(noQuery.EndsWith(".bsor", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    StartCoroutine(LoadReplayURLCoroutine(decodedURL));
+                    UrlArgHandler.LoadedReplayURL = decodedURL;
+                    return;
+                }
+
+                if(noQuery.Contains("stream.beatleader.com", StringComparison.InvariantCultureIgnoreCase))
+                {
+                    StartBsorV1StreamURI(uri);
+                    return;
+                }
             }
 
             Debug.LogWarning($"{decodedURL} doesn't link to a valid map!");
