@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.WebSockets;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,20 +47,9 @@ public class BsorV1Stream : ReplayStreamingSocket
         for(int i = 0; i < frames.Count; i++)
         {
             ReplayFrame newFrame = new ReplayFrame(frames[i]);
-            if(frameCount > 1)
-            {
-                ReplayFrame lastFrame = PlayerPositionManager.ReplayFrames[frameCount - 1];
-                ReplayFrame secondLastFrame = PlayerPositionManager.ReplayFrames[frameCount - 2];
-
-                //DeltaTime simulates Time.deltaTime, which has a one frame delay
-                //So we get the time difference between the last two frames
-                newFrame.DeltaTime = lastFrame.Time - secondLastFrame.Time;
-            }
-            else
-            {
-                //DeltaTime can be approximated based on framerate
-                newFrame.DeltaTime = 1f / newFrame.FPS;
-            }
+            //DeltaTime can be approximated based on framerate
+            //(preferable in a stream because we don't have all the context)
+            newFrame.DeltaTime = 1f / newFrame.FPS;
 
             //Calculate average framerates for displaying on the frame counter
             checkedFrameCount++;
@@ -83,7 +73,7 @@ public class BsorV1Stream : ReplayStreamingSocket
             }
             newFrame.AverageFPS = averageFramerate;
 
-            if (newFrame.Time > StreamTime)
+            if(newFrame.Time > StreamTime)
             {
                 StreamTime = newFrame.Time;
             }
@@ -95,13 +85,55 @@ public class BsorV1Stream : ReplayStreamingSocket
 
     private void ProcessIncrementalPlayerHeight(List<AutomaticHeight> heightEvents)
     {
-        
+        foreach(AutomaticHeight height in heightEvents)
+        {
+            ReplayManager.PlayerHeightEvents.Add(new PlayerHeightEvent(height));
+        }
     }
 
 
     private void ProcessIncrementalNotes(List<NoteEvent> noteEvents)
     {
-        
+        ObjectManager objectManager = ObjectManager.Instance;
+
+        foreach(NoteEvent noteEvent in noteEvents)
+        {
+            ScoringEvent scoringEvent = new ScoringEvent(noteEvent);
+            float eventTime = scoringEvent.Time;
+
+            List<Note> sameTimeNotes = objectManager.noteManager.Objects.GetObjectsAtTime(eventTime);
+            Note noteMatch = sameTimeNotes.FirstOrDefault(x => x.ScoreEventID == noteEvent.noteID);
+            if(noteMatch != null)
+            {
+                scoringEvent.SetEventValues(noteMatch.ScoringType, noteMatch.Position);
+                continue;
+            }
+
+            List<Bomb> sameTimeBombs = objectManager.bombManager.Objects.GetObjectsAtTime(eventTime);
+            Bomb bombMatch = sameTimeBombs.FirstOrDefault(x => x.ScoreEventID == noteEvent.noteID);
+            if(bombMatch != null)
+            {
+                scoringEvent.SetEventValues(ScoringType.NoScore, bombMatch.Position);
+                continue;
+            }
+
+            List<ChainLink> sameTimeLinks = objectManager.chainManager.Objects.GetObjectsAtTime(eventTime);
+            ChainLink linkMatch = sameTimeLinks.FirstOrDefault(x => x.ScoreEventID == noteEvent.noteID);
+            if(linkMatch != null)
+            {
+                scoringEvent.SetEventValues(ScoringType.ChainLink, linkMatch.Position);
+                continue;
+            }
+
+            // Also check if this event is a chain link arc head
+            int checkId = noteEvent.noteID - (int)ScoringType.ChainLinkArcHead * 10000;
+            checkId += (int)ScoringType.ChainLink * 10000;
+            linkMatch = sameTimeLinks.FirstOrDefault(x => x.ScoreEventID == checkId);
+            if(linkMatch != null)
+            {
+                scoringEvent.SetEventValues(ScoringType.ChainLinkArcHead, linkMatch.Position);
+            }
+        }
     }
 
 
@@ -116,16 +148,16 @@ public class BsorV1Stream : ReplayStreamingSocket
         int pointer = 0;
         int length = message.Length;
 
-        while (pointer < length)
+        while(pointer < length)
         {
             int value = message[pointer++];
             try
             {
-                if (value >= 0 && value <= (int)StructType.pauses)
+                if(value >= 0 && value <= (int)StructType.pauses)
                 {
                     StructType type = (StructType)value;
 
-                    switch (type)
+                    switch(type)
                     {
                         case StructType.info:
                             CurrentReplay = new Replay
@@ -137,7 +169,7 @@ public class BsorV1Stream : ReplayStreamingSocket
                             OnMapStarted();
                             break;
                         case StructType.frames:
-                            if (CurrentReplay != null)
+                            if(CurrentReplay != null)
                             {
                                 List<Frame> newFrames = ReplayDecoder.DecodeFrames(message, ref pointer);
                                 CurrentReplay.frames.AddRange(newFrames);
@@ -145,7 +177,7 @@ public class BsorV1Stream : ReplayStreamingSocket
                             }
                             break;
                         case StructType.notes:
-                            if (CurrentReplay != null)
+                            if(CurrentReplay != null)
                             {
                                 List<NoteEvent> newNotes = ReplayDecoder.DecodeNotes(message, ref pointer);
                                 CurrentReplay.notes.AddRange(newNotes);
@@ -153,7 +185,7 @@ public class BsorV1Stream : ReplayStreamingSocket
                             }
                             break;
                         case StructType.walls:
-                            if (CurrentReplay != null)
+                            if(CurrentReplay != null)
                             {
                                 List<WallEvent> newWalls = ReplayDecoder.DecodeWalls(message, ref pointer);
                                 CurrentReplay.walls.AddRange(newWalls);
@@ -161,7 +193,7 @@ public class BsorV1Stream : ReplayStreamingSocket
                             }
                             break;
                         case StructType.heights:
-                            if (CurrentReplay != null)
+                            if(CurrentReplay != null)
                             {
                                 List<AutomaticHeight> newHeights = ReplayDecoder.DecodeHeight(message, ref pointer);
                                 CurrentReplay.heights.AddRange(newHeights);
@@ -169,7 +201,7 @@ public class BsorV1Stream : ReplayStreamingSocket
                             }
                             break;
                         case StructType.pauses:
-                            if (CurrentReplay != null)
+                            if(CurrentReplay != null)
                             {
                                 List<Pause> newPauses = ReplayDecoder.DecodePauses(message, ref pointer);
                                 CurrentReplay.pauses.AddRange(newPauses);
@@ -181,9 +213,9 @@ public class BsorV1Stream : ReplayStreamingSocket
                             break;
                     }
                 }
-                else if (value == 99)
+                else if(value == 99)
                 {
-                    if (CurrentReplay != null)
+                    if(CurrentReplay != null)
                     {
                         CurrentReplay.info = ReplayDecoder.DecodeInfo(message, ref pointer);
                     }
@@ -194,7 +226,7 @@ public class BsorV1Stream : ReplayStreamingSocket
                     // TODO: Handle map end state
                 }
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 Debug.LogError($"Error parsing streamed replay chunk! {e.Message}, {e.StackTrace}"); 
             }

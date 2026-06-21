@@ -43,7 +43,7 @@ public class ReplayManager : MonoBehaviour
     public static float FailTime = 0f;
     public static bool HasFailed => Failed && TimeManager.CurrentTime >= FailTime;
 
-    private static MapElementList<PlayerHeightEvent> playerHeightEvents = new MapElementList<PlayerHeightEvent>();
+    public static MapElementList<PlayerHeightEvent> PlayerHeightEvents = new MapElementList<PlayerHeightEvent>();
 
     private static bool animatingAvatar = false;
     private static Coroutine animateAvatarCoroutine;
@@ -114,12 +114,12 @@ public class ReplayManager : MonoBehaviour
         newReplay.pauses.OrderBy(x => x.time);
         newReplay.walls.OrderBy(x => x.time);
 
-        playerHeightEvents.Clear();
+        PlayerHeightEvents.Clear();
         for(int i = 0; i < newReplay.heights.Count; i++)
         {
-            playerHeightEvents.Add(new PlayerHeightEvent(newReplay.heights[i]));
+            PlayerHeightEvents.Add(new PlayerHeightEvent(newReplay.heights[i]));
         }
-        playerHeightEvents.SortElementsByBeat();
+        PlayerHeightEvents.SortElementsByBeat();
 
         IsReplayMode = true;
         CurrentReplay = newReplay;
@@ -250,9 +250,9 @@ public class ReplayManager : MonoBehaviour
 
     private static void UpdatePlayerHeight(float beat)
     {
-        int lastHeightIndex = playerHeightEvents.GetLastIndex(TimeManager.CurrentTime, x => x.Time <= TimeManager.CurrentTime);
+        int lastHeightIndex = PlayerHeightEvents.GetLastIndex(TimeManager.CurrentTime, x => x.Time <= TimeManager.CurrentTime);
         PlayerHeight = lastHeightIndex >= 0
-            ? playerHeightEvents[lastHeightIndex].Height
+            ? PlayerHeightEvents[lastHeightIndex].Height
             : CurrentReplay.info.height;
         
         if(PlayerHeight <= 0.001)

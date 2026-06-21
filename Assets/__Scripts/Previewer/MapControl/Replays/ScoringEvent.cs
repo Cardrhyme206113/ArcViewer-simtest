@@ -192,6 +192,8 @@ public class ScoringEvent : MapElement
 
     public static ScoringEvent BruteForceMatchNote(List<ScoringEvent> scoringEvents, ref ScoringType scoringType, int noteID, bool hasTail, bool hasHead, bool isChainHead)
     {
+        ScoringType originalType = scoringType;
+
         int noTypeID = noteID - (int)scoringType * 10000;
         if(scoringType == ScoringType.Note)
         {
@@ -281,6 +283,7 @@ public class ScoringEvent : MapElement
         }
 
         //Nothing matched
+        scoringType = originalType;
         return null;
     }
 }
