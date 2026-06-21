@@ -132,7 +132,11 @@ public class BsorV1Stream : ReplayStreamingSocket
             if(linkMatch != null)
             {
                 scoringEvent.SetEventValues(ScoringType.ChainLinkArcHead, linkMatch.Position);
+                continue;
             }
+
+            // Found no match, so use inference
+            scoringEvent.InferEventValues();
         }
     }
 
