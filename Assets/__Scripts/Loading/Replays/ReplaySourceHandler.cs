@@ -1,9 +1,24 @@
+using UnityEngine;
+
 public static class ReplaySourceHandler
 {
     public static ReplayStreamingSocket Stream { get; private set; }
+    public static bool IsStreaming { get; private set; }
+
+    public static float StreamDelay => Mathf.Clamp(SettingsManager.GetFloat("streamdelay"), 0.1f, 10f);
+    public static float StreamPosition => IsStreaming ? Stream.StreamTime - StreamDelay : Mathf.Infinity;
 
 
-    private static void HandleUIStateChanged(UIState newState)
+    public static void SetLiveTimeAndPlay()
+    {
+        TimeManager.SetPlaying(false);
+        TimeManager.CurrentTime = StreamPosition;
+        TimeManager.IsLivePosition = true;
+        TimeManager.SetPlaying(true);
+    }
+
+
+    private static void UpdateUIState(UIState newState)
     {
         // Avoid resetting when the map loader is currently loading
         // This is because we go back to map selection when loading a new map for the stream
@@ -11,6 +26,12 @@ public static class ReplaySourceHandler
         {
             Reset();
         }
+    }
+
+
+    private static void UpdateDifficulty(Difficulty newDifficulty)
+    {
+        SetLiveTimeAndPlay();
     }
 
 
@@ -23,7 +44,7 @@ public static class ReplaySourceHandler
 
         // Simply doing this *should* reset all state everywhere
         // (I don't really remember all this shit that well)
-        UIStateManager.OnUIStateChanged -= HandleUIStateChanged;
+        UIStateManager.OnUIStateChanged -= UpdateUIState;
         UIStateManager.CurrentState = UIState.MapSelection;
     }
 
@@ -36,7 +57,9 @@ public static class ReplaySourceHandler
         }
 
         Stream = stream;
-        UIStateManager.OnUIStateChanged += HandleUIStateChanged;
+        IsStreaming = true;
+        UIStateManager.OnUIStateChanged += UpdateUIState;
+        BeatmapManager.OnBeatmapDifficultyChanged += UpdateDifficulty;
     }
 
 
@@ -44,5 +67,9 @@ public static class ReplaySourceHandler
     {
         Stream?.Dispose();
         Stream = null;
+        IsStreaming = false;
+
+        UIStateManager.OnUIStateChanged -= UpdateUIState;
+        BeatmapManager.OnBeatmapDifficultyChanged -= UpdateDifficulty;
     }
 }

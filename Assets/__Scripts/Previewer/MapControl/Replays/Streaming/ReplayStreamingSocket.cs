@@ -113,12 +113,17 @@ public abstract class ReplayStreamingSocket : IDisposable
     public void Dispose()
     {
         Streaming = false;
-        StreamTask?.Dispose();
-        StreamTask = null;
 
         socket?.CloseAsync(WebSocketCloseStatus.NormalClosure, "Client closed", default);
         socket = null;
 
         ReplaySourceHandler.HandleStreamClosed(this);
+    }
+
+
+    public void DisposeTask()
+    {
+        StreamTask?.Dispose();
+        StreamTask = null;
     }
 }
