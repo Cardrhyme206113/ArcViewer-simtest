@@ -1,0 +1,85 @@
+name: Audit deploy branch size
+
+on:
+  push:
+    paths:
+      - .github/trigger-audit-deploy-size.txt
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: source
+          fetch-depth: 1
+
+      - name: Checkout deploy branch
+        uses: actions/checkout@v4
+        with:
+          ref: deploy
+          path: deploy
+          fetch-depth: 1
+
+      - name: Build audit report
+        shell: bash
+        run: |
+          {
+            echo "ARC VIEWER DEPLOY AUDIT"
+            echo "Generated: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo
+            echo "== Deploy total =="
+            du -sh deploy
+            echo
+            echo "== Largest deploy files =="
+            find deploy -type f -printf '%s\t%p\n' | sort -nr | head -100 | awk '{printf "%.2f MiB\t%s\n", $1/1048576, $2}'
+            echo
+            echo "== Full deploy file list =="
+            find deploy -type f -printf '%s\t%p\n' | sort -nr | awk '{printf "%.2f KiB\t%s\n", $1/1024, $2}'
+            echo
+            echo "== Files referenced directly by deploy/index.html =="
+            grep -Eo '([A-Za-z0-9_./-]+\.(js|css|ico|data|wasm|json|png|jpg|jpeg|ogg|wav))' deploy/index.html | sort -u || true
+            echo
+            echo "== StreamingAssets =="
+            if [ -d deploy/StreamingAssets ]; then
+              find deploy/StreamingAssets -type f -printf '%s\t%p\n' | sort -nr | awk '{printf "%.2f KiB\t%s\n", $1/1024, $2}'
+            else
+              echo "None"
+            fi
+            echo
+            echo "== Source Assets top-level sizes =="
+            if [ -d source/Assets ]; then
+              du -h --max-depth=2 source/Assets | sort -hr | head -100
+            else
+              echo "No Assets directory"
+            fi
+            echo
+            echo "== Source runtime-loading references =="
+            grep -RInE 'Resources\.Load|Addressables|AssetBundle|StreamingAssets|SceneManager\.LoadScene|Environment|Prefab|Materials|Shaders' source/Assets --include='*.cs' --include='*.shader' --include='*.json' 2>/dev/null | head -500 || true
+            echo
+            echo "== Build settings scenes =="
+            if [ -f source/ProjectSettings/EditorBuildSettings.asset ]; then
+              cat source/ProjectSettings/EditorBuildSettings.asset
+            else
+              echo "No EditorBuildSettings.asset"
+            fi
+            echo
+            echo "== Package manifest =="
+            cat source/Packages/manifest.json 2>/dev/null || true
+          } > source/arcviewer-deploy-audit.txt
+
+      - name: Commit report
+        shell: bash
+        run: |
+          cd source
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/trigger-audit-deploy-size.txt
+          git add arcviewer-deploy-audit.txt
+          git commit -m "Audit ArcViewer deploy size and asset references"
+          git push
