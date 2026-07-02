@@ -96,9 +96,9 @@
         playbackUrl.searchParams.set("url", mapUrl);
         playbackUrl.searchParams.set("noProxy", "true");
         playbackUrl.searchParams.set("autoPlay", "true");
-        playbackUrl.searchParams.set("uiOff", data.uiOff === false ? "false" : "true");
-        playbackUrl.searchParams.set("mode", data.mode || "Standard");
-        playbackUrl.searchParams.set("difficulty", data.difficulty || "ExpertPlus");
+        playbackUrl.searchParams.set("uiOff", data.uiOff === true ? "true" : "false");
+        if (data.mode) playbackUrl.searchParams.set("mode", data.mode);
+        if (data.difficulty) playbackUrl.searchParams.set("difficulty", data.difficulty);
         playbackUrl.searchParams.set("ssPlay", "1");
         location.replace(playbackUrl.href);
       } catch (error) {
