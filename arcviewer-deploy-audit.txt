@@ -1,0 +1,561 @@
+ARC VIEWER DEPLOY AUDIT
+Generated: 2026-07-02T20:49:25Z
+
+== Deploy total ==
+109M	deploy
+
+== Largest deploy files ==
+50.53 MiB	deploy/Build/ArcViewer.wasm
+24.90 MiB	deploy/Build/ArcViewer.data
+14.83 MiB	deploy/.git/objects/85/1546f0f64d6ce8018734b8983e2c816457d4de
+14.72 MiB	deploy/.git/objects/8d/060b1f631f2d432093808cd83474354a3130c9
+0.53 MiB	deploy/TemplateData/SFX/BadHitsounds/VineBoomBadHitsound.wav
+0.47 MiB	deploy/Build/ArcViewer.framework.js
+0.42 MiB	deploy/.git/objects/fc/5c02e983894225afbf46f8076968d0b51b7cd7
+0.24 MiB	deploy/TemplateData/Scripts/oggdecode.js
+0.16 MiB	deploy/TemplateData/SFX/BadHitsounds/FunkyBadHitsound.wav
+0.13 MiB	deploy/.git/objects/6e/434525086ecbe0d496d78f3c9a7f07db5e9bea
+0.12 MiB	deploy/TemplateData/SFX/BadHitsounds/RecordScratchBadHitsound.wav
+0.11 MiB	deploy/.git/objects/0a/cc32a951a03f69363d25c795c86089c1d6e50a
+0.11 MiB	deploy/TemplateData/favicon.ico
+0.11 MiB	deploy/.git/objects/0c/4fb15851851fcff6f2b5c40d608f2b5a26c6c9
+0.10 MiB	deploy/.git/objects/aa/dd9577724771877bea4ec0a828a688277d385e
+0.10 MiB	deploy/TemplateData/SFX/Hitsounds/GalxHitsound.wav
+0.10 MiB	deploy/TemplateData/SFX/Hitsounds/ThumpyHitsound.wav
+0.10 MiB	deploy/TemplateData/SFX/Hitsounds/RabbitViewerTick.wav
+0.10 MiB	deploy/TemplateData/SFX/Hitsounds/OsuHitsound.wav
+0.09 MiB	deploy/TemplateData/SFX/Hitsounds/ChromapperTick.wav
+0.07 MiB	deploy/.git/objects/99/5ec21b45a587bf8d16f049d28263a0a3082ebd
+0.06 MiB	deploy/.git/objects/ef/848c909a110f4294b399fcee7091dd01d40a96
+0.05 MiB	deploy/.git/objects/ba/4ac89433f4e35d0f7acbf51ff720ff3884a0b5
+0.05 MiB	deploy/.git/objects/a5/35b5ef385376ec0d4d39b33ef8abae1b5a1104
+0.05 MiB	deploy/.git/objects/c1/1187b14fb1c90be10ae3b0b8c939ee0782798f
+0.03 MiB	deploy/.git/objects/8d/8c088ba36c37c393917ea7925cf33581f65be6
+0.03 MiB	deploy/Build/ArcViewer.loader.js
+0.01 MiB	deploy/TemplateData/SFX/BadHitsounds/BloopBadHitsound.wav
+0.01 MiB	deploy/.git/objects/b9/37be56d6547dcaa80f881b8e0b421af64809e2
+0.01 MiB	deploy/.git/objects/14/c1d5503fd2d6750f6620855425b32726077931
+0.01 MiB	deploy/index.html
+0.00 MiB	deploy/.git/hooks/pre-rebase.sample
+0.00 MiB	deploy/.git/hooks/fsmonitor-watchman.sample
+0.00 MiB	deploy/.git/hooks/update.sample
+0.00 MiB	deploy/.git/objects/a7/3f0345a75b701af853044f931246105942b6e1
+0.00 MiB	deploy/.git/hooks/push-to-checkout.sample
+0.00 MiB	deploy/.git/index
+0.00 MiB	deploy/.git/hooks/sendemail-validate.sample
+0.00 MiB	deploy/.git/hooks/commit-msg.sample
+0.00 MiB	deploy/.git/hooks/pre-commit.sample
+0.00 MiB	deploy/.git/hooks/prepare-commit-msg.sample
+0.00 MiB	deploy/.git/hooks/pre-push.sample
+0.00 MiB	deploy/.git/config
+0.00 MiB	deploy/service-worker.js
+0.00 MiB	deploy/.github/workflows/deploy-pages.yml
+0.00 MiB	deploy/.git/hooks/pre-receive.sample
+0.00 MiB	deploy/TemplateData/style.css
+0.00 MiB	deploy/.git/hooks/applypatch-msg.sample
+0.00 MiB	deploy/.git/objects/1b/e177ea8d2f8c6efd0d4cfd27554acb4ff33384
+0.00 MiB	deploy/.git/hooks/pre-applypatch.sample
+0.00 MiB	deploy/.git/hooks/pre-merge-commit.sample
+0.00 MiB	deploy/.git/objects/e5/976e5b8a906b445a866efbfcbc0cbbe9069d5a
+0.00 MiB	deploy/.git/logs/refs/remotes/origin/deploy
+0.00 MiB	deploy/.git/objects/c3/3f9ffc86ef972774731454f8dfad4a5587820a
+0.00 MiB	deploy/.git/info/exclude
+0.00 MiB	deploy/.git/logs/refs/heads/deploy
+0.00 MiB	deploy/.git/objects/89/cb9c45e5c60d8150368cfcda729448af4b8cb0
+0.00 MiB	deploy/.git/objects/71/926641047114d330e3f5ca82b5aeb41af50e7a
+0.00 MiB	deploy/.git/logs/HEAD
+0.00 MiB	deploy/.git/objects/19/c065e5b2fd3fdff9703f3e26393ccefbd9f111
+0.00 MiB	deploy/.git/objects/00/e618f339ec2e3397703c5e258f21d215fc8bf5
+0.00 MiB	deploy/.git/hooks/post-update.sample
+0.00 MiB	deploy/.git/objects/09/4b3616da444d57380f224c8335efc23c4b5558
+0.00 MiB	deploy/.git/objects/8c/a910545f42d5cb3223fc003fe2ae767d5ad611
+0.00 MiB	deploy/.git/FETCH_HEAD
+0.00 MiB	deploy/.git/objects/d0/1612f729991d6b606e9148c70014b2d5aa5a00
+0.00 MiB	deploy/TemplateData/progress-bar-empty-dark.png
+0.00 MiB	deploy/.git/objects/c4/32c8666d955307ec7c690ef3624e50093513fe
+0.00 MiB	deploy/.git/config.worktree
+0.00 MiB	deploy/.git/objects/c7/4a6ff222ac62bfb1b3e8fe62688ad1ccc08f7f
+0.00 MiB	deploy/TemplateData/progress-bar-full-dark.png
+0.00 MiB	deploy/.git/description
+0.00 MiB	deploy/.git/objects/98/e7eda5af0cc5ac8916d8822c309bda5a012a16
+0.00 MiB	deploy/.git/objects/02/1d4b2f2646e6901b3b73802d6d995e15cc8a40
+0.00 MiB	deploy/.git/objects/9c/39ae4c24105049c741c989160f051f6396e8bd
+0.00 MiB	deploy/.git/shallow
+0.00 MiB	deploy/.git/refs/remotes/origin/deploy
+0.00 MiB	deploy/.git/refs/heads/deploy
+0.00 MiB	deploy/.git/HEAD
+0.00 MiB	deploy/.git/objects/8b/137891791fe96927ad78e64b0aad7bded08bdc
+0.00 MiB	deploy/.nojekyll
+
+== Full deploy file list ==
+51739.83 KiB	deploy/Build/ArcViewer.wasm
+25499.49 KiB	deploy/Build/ArcViewer.data
+15187.91 KiB	deploy/.git/objects/85/1546f0f64d6ce8018734b8983e2c816457d4de
+15071.76 KiB	deploy/.git/objects/8d/060b1f631f2d432093808cd83474354a3130c9
+540.55 KiB	deploy/TemplateData/SFX/BadHitsounds/VineBoomBadHitsound.wav
+476.68 KiB	deploy/Build/ArcViewer.framework.js
+428.29 KiB	deploy/.git/objects/fc/5c02e983894225afbf46f8076968d0b51b7cd7
+245.84 KiB	deploy/TemplateData/Scripts/oggdecode.js
+162.69 KiB	deploy/TemplateData/SFX/BadHitsounds/FunkyBadHitsound.wav
+131.42 KiB	deploy/.git/objects/6e/434525086ecbe0d496d78f3c9a7f07db5e9bea
+119.77 KiB	deploy/TemplateData/SFX/BadHitsounds/RecordScratchBadHitsound.wav
+115.81 KiB	deploy/.git/objects/0a/cc32a951a03f69363d25c795c86089c1d6e50a
+108.82 KiB	deploy/TemplateData/favicon.ico
+108.69 KiB	deploy/.git/objects/0c/4fb15851851fcff6f2b5c40d608f2b5a26c6c9
+104.99 KiB	deploy/.git/objects/aa/dd9577724771877bea4ec0a828a688277d385e
+101.90 KiB	deploy/TemplateData/SFX/Hitsounds/GalxHitsound.wav
+100.90 KiB	deploy/TemplateData/SFX/Hitsounds/ThumpyHitsound.wav
+99.97 KiB	deploy/TemplateData/SFX/Hitsounds/RabbitViewerTick.wav
+97.93 KiB	deploy/TemplateData/SFX/Hitsounds/OsuHitsound.wav
+95.58 KiB	deploy/TemplateData/SFX/Hitsounds/ChromapperTick.wav
+76.28 KiB	deploy/.git/objects/99/5ec21b45a587bf8d16f049d28263a0a3082ebd
+62.57 KiB	deploy/.git/objects/ef/848c909a110f4294b399fcee7091dd01d40a96
+55.62 KiB	deploy/.git/objects/ba/4ac89433f4e35d0f7acbf51ff720ff3884a0b5
+51.75 KiB	deploy/.git/objects/a5/35b5ef385376ec0d4d39b33ef8abae1b5a1104
+47.60 KiB	deploy/.git/objects/c1/1187b14fb1c90be10ae3b0b8c939ee0782798f
+34.41 KiB	deploy/.git/objects/8d/8c088ba36c37c393917ea7925cf33581f65be6
+25.83 KiB	deploy/Build/ArcViewer.loader.js
+12.51 KiB	deploy/TemplateData/SFX/BadHitsounds/BloopBadHitsound.wav
+9.97 KiB	deploy/.git/objects/b9/37be56d6547dcaa80f881b8e0b421af64809e2
+8.27 KiB	deploy/.git/objects/14/c1d5503fd2d6750f6620855425b32726077931
+7.38 KiB	deploy/index.html
+4.78 KiB	deploy/.git/hooks/pre-rebase.sample
+4.50 KiB	deploy/.git/hooks/fsmonitor-watchman.sample
+3.56 KiB	deploy/.git/hooks/update.sample
+2.78 KiB	deploy/.git/objects/a7/3f0345a75b701af853044f931246105942b6e1
+2.72 KiB	deploy/.git/hooks/push-to-checkout.sample
+2.50 KiB	deploy/.git/index
+2.25 KiB	deploy/.git/hooks/sendemail-validate.sample
+1.93 KiB	deploy/.git/hooks/commit-msg.sample
+1.61 KiB	deploy/.git/hooks/pre-commit.sample
+1.46 KiB	deploy/.git/hooks/prepare-commit-msg.sample
+1.34 KiB	deploy/.git/hooks/pre-push.sample
+0.86 KiB	deploy/.git/config
+0.75 KiB	deploy/service-worker.js
+0.74 KiB	deploy/.github/workflows/deploy-pages.yml
+0.53 KiB	deploy/.git/hooks/pre-receive.sample
+0.47 KiB	deploy/TemplateData/style.css
+0.47 KiB	deploy/.git/hooks/applypatch-msg.sample
+0.43 KiB	deploy/.git/objects/1b/e177ea8d2f8c6efd0d4cfd27554acb4ff33384
+0.41 KiB	deploy/.git/hooks/pre-applypatch.sample
+0.41 KiB	deploy/.git/hooks/pre-merge-commit.sample
+0.38 KiB	deploy/.git/objects/e5/976e5b8a906b445a866efbfcbc0cbbe9069d5a
+0.34 KiB	deploy/.git/logs/refs/remotes/origin/deploy
+0.24 KiB	deploy/.git/objects/c3/3f9ffc86ef972774731454f8dfad4a5587820a
+0.23 KiB	deploy/.git/info/exclude
+0.22 KiB	deploy/.git/logs/refs/heads/deploy
+0.22 KiB	deploy/.git/objects/89/cb9c45e5c60d8150368cfcda729448af4b8cb0
+0.22 KiB	deploy/.git/objects/71/926641047114d330e3f5ca82b5aeb41af50e7a
+0.21 KiB	deploy/.git/logs/HEAD
+0.20 KiB	deploy/.git/objects/19/c065e5b2fd3fdff9703f3e26393ccefbd9f111
+0.19 KiB	deploy/.git/objects/00/e618f339ec2e3397703c5e258f21d215fc8bf5
+0.18 KiB	deploy/.git/hooks/post-update.sample
+0.16 KiB	deploy/.git/objects/09/4b3616da444d57380f224c8335efc23c4b5558
+0.15 KiB	deploy/.git/objects/8c/a910545f42d5cb3223fc003fe2ae767d5ad611
+0.11 KiB	deploy/.git/FETCH_HEAD
+0.10 KiB	deploy/.git/objects/d0/1612f729991d6b606e9148c70014b2d5aa5a00
+0.09 KiB	deploy/TemplateData/progress-bar-empty-dark.png
+0.08 KiB	deploy/.git/objects/c4/32c8666d955307ec7c690ef3624e50093513fe
+0.08 KiB	deploy/.git/config.worktree
+0.08 KiB	deploy/.git/objects/c7/4a6ff222ac62bfb1b3e8fe62688ad1ccc08f7f
+0.07 KiB	deploy/TemplateData/progress-bar-full-dark.png
+0.07 KiB	deploy/.git/description
+0.06 KiB	deploy/.git/objects/98/e7eda5af0cc5ac8916d8822c309bda5a012a16
+0.06 KiB	deploy/.git/objects/02/1d4b2f2646e6901b3b73802d6d995e15cc8a40
+0.05 KiB	deploy/.git/objects/9c/39ae4c24105049c741c989160f051f6396e8bd
+0.04 KiB	deploy/.git/shallow
+0.04 KiB	deploy/.git/refs/remotes/origin/deploy
+0.04 KiB	deploy/.git/refs/heads/deploy
+0.02 KiB	deploy/.git/HEAD
+0.02 KiB	deploy/.git/objects/8b/137891791fe96927ad78e64b0aad7bded08bdc
+0.00 KiB	deploy/.nojekyll
+
+== Files referenced directly by deploy/index.html ==
+./service-worker.js
+Build/ArcViewer.data
+Build/ArcViewer.framework.js
+Build/ArcViewer.loader.js
+Build/ArcViewer.wasm
+TemplateData/Scripts/oggdecode.js
+TemplateData/favicon.ico
+TemplateData/style.css
+event.data
+
+== StreamingAssets ==
+None
+
+== Source Assets top-level sizes ==
+44M	source/Assets
+20M	source/Assets/Textures
+17M	source/Assets/Textures/Fonts
+5.8M	source/Assets/_Scenes
+4.8M	source/Assets/TextMesh Pro
+3.3M	source/Assets/StandaloneFileBrowser
+3.2M	source/Assets/_Scenes/Environments
+3.2M	source/Assets/StandaloneFileBrowser/Plugins
+2.6M	source/Assets/__Scripts
+2.3M	source/Assets/TextMesh Pro/Resources
+1.9M	source/Assets/_Prefabs
+1.9M	source/Assets/WebGLTemplates
+1.8M	source/Assets/WebGLTemplates/Fullscreen
+1.6M	source/Assets/Textures/Environment
+1.5M	source/Assets/Audio
+1.4M	source/Assets/Textures/Sprites
+1.4M	source/Assets/TextMesh Pro/Shaders
+1.4M	source/Assets/Audio/SFX
+1.3M	source/Assets/_Prefabs/Environment
+1.3M	source/Assets/Shaders
+796K	source/Assets/__Scripts/UI
+780K	source/Assets/Models
+776K	source/Assets/__Scripts/Previewer
+688K	source/Assets/TextMesh Pro/Documentation
+596K	source/Assets/Shaders/Objects
+500K	source/Assets/_Prefabs/UI
+500K	source/Assets/Shaders/Player
+408K	source/Assets/__Scripts/Loading
+380K	source/Assets/_Materials
+376K	source/Assets/Models/Environment
+364K	source/Assets/TextMesh Pro/Fonts
+284K	source/Assets/Models/Objects
+224K	source/Assets/Textures/CubeMaps
+204K	source/Assets/__Scripts/Settings
+172K	source/Assets/_Materials/Environment
+152K	source/Assets/__Scripts/BeatmapData
+144K	source/Assets/TextMesh Pro/Sprites
+120K	source/Assets/_Materials/Objects
+104K	source/Assets/__Scripts/Sound
+104K	source/Assets/Models/Player
+100K	source/Assets/Rendering
+92K	source/Assets/__Scripts/Utilities
+88K	source/Assets/Bloomfog
+76K	source/Assets/_Prefabs/Objects
+72K	source/Assets/Shaders/UI
+64K	source/Assets/Textures/Sabers
+64K	source/Assets/Shaders/Environment
+64K	source/Assets/Plugins
+56K	source/Assets/Plugins/MimeDetect
+40K	source/Assets/_Materials/Player
+40K	source/Assets/WebGLCopyAndPaste
+28K	source/Assets/_Materials/UI
+28K	source/Assets/Bloomfog/Shaders
+28K	source/Assets/Bloomfog/Materials
+24K	source/Assets/__Scripts/Timing
+20K	source/Assets/_Prefabs/Player
+20K	source/Assets/Rendering/RenderTextures
+20K	source/Assets/Audio/Mixers
+16K	source/Assets/_Prefabs/HUD
+16K	source/Assets/WebGLCopyAndPaste/Plugins
+12K	source/Assets/WebGLCopyAndPaste/Scripts
+12K	source/Assets/Textures/Objects
+
+== Source runtime-loading references ==
+source/Assets/__Scripts/UI/Popups/DialogueHandler.cs:14:    [SerializeField] private GameObject dialogueBoxPrefab;
+source/Assets/__Scripts/UI/Popups/DialogueHandler.cs:29:        GameObject dialogueBoxObject = Instantiate(Instance.dialogueBoxPrefab);
+source/Assets/__Scripts/UI/Previewer/TimelinePanel/BookmarkHandler.cs:6:    [SerializeField] private BookmarkIcon bookmarkPrefab;
+source/Assets/__Scripts/UI/Previewer/TimelinePanel/BookmarkHandler.cs:29:            BookmarkIcon newBookmark = Instantiate(bookmarkPrefab, bookmarkParent, false);
+source/Assets/__Scripts/UI/Previewer/TimelinePanel/MistakeIconHandler.cs:6:    [SerializeField] private MistakeIcon iconPrefab;
+source/Assets/__Scripts/UI/Previewer/TimelinePanel/MistakeIconHandler.cs:127:            MistakeIcon newIcon = Instantiate(iconPrefab, iconParent, false);
+source/Assets/__Scripts/UI/Previewer/TimelinePanel/MistakeIconHandler.cs:135:            MistakeIcon newIcon = Instantiate(iconPrefab, iconParent, false);
+source/Assets/__Scripts/UI/Previewer/TimelinePanel/MistakeIconHandler.cs:143:            MistakeIcon newIcon = Instantiate(iconPrefab, iconParent, false);
+source/Assets/__Scripts/UI/Previewer/InfoPanel/JumpSettingsPanel.cs:72:        ObjectManager.Instance.arcManager.UpdateMaterials();
+source/Assets/__Scripts/Utilities/MainSceneAutoLoad.cs:15:            SceneManager.LoadScene(0, LoadSceneMode.Single);
+source/Assets/__Scripts/Previewer/Graphics/EnvironmentLightingUpdater.cs:4:public class EnvironmentLightingUpdater : MonoBehaviour
+source/Assets/__Scripts/Previewer/Graphics/EnvironmentLightingUpdater.cs:24:        DynamicGI.UpdateEnvironment();
+source/Assets/__Scripts/Previewer/Elements/LightHandlers/RingHandler.cs:78:    [MenuItem("Environment/SetRingLightIDs")]
+source/Assets/__Scripts/Previewer/Elements/LightHandlers/RingHandler.cs:122:    [MenuItem("Environment/SetRingPositions")]
+source/Assets/__Scripts/Previewer/MapControl/BeatmapManager.cs:95:    public static string EnvironmentName => CurrentDifficulty.environmentName;
+source/Assets/__Scripts/Previewer/MapControl/BeatmapManager.cs:290:        environmentName = "DefaultEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:67:                newColors = GetEnvironmentColors(BeatmapManager.EnvironmentName);
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:89:    private static ColorPalette GetEnvironmentColors(string environmentName)
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:95:            case "DefaultEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:96:            case "TriangleEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:97:            case "NiceEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:98:            case "BigMirrorEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:99:            case "DragonsEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:100:            case "MonstercatEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:101:            case "PanicEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:103:            case "OriginsEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:105:            case "KDAEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:107:            case "CrabRaveEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:109:            case "RocketEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:111:            case "GreenDayEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:112:            case "GreenDayGrenadeEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:114:            case "TimbalandEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:116:            case "FitBeatEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:118:            case "LinkinParkEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:120:            case "BTSEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:122:            case "KaleidoscopeEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:124:            case "InterscopeEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:126:            case "SkrillexEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:128:            case "BillieEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:130:            case "HalloweenEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:132:            case "GagaEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:134:            case "WeaveEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:139:            case "PyroEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:141:            case "EDMEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:143:            case "TheSecondEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:148:            case "LizzoEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:150:            case "TheWeekndEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:152:            case "RockMixtapeEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:154:            case "Dragons2Environment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:156:            case "Panic2Environment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:158:            case "QueenEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:160:            case "LinkinPark2Environment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:162:            case "TheRollingStonesEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:164:            case "LatticeEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:166:            case "DaftPunkEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:168:            case "HipHopEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:170:            case "ColliderEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:172:            case "BritneyEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:174:            case "Monstercat2Environment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:176:            case "MetallicaEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:178:            case "GridEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/ColorManager.cs:180:            case "ColdplayEnvironment":
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightEvents.cs:173:        bool randomize = EnvironmentManager.CurrentEnvironmentParameters.RandomizeRotatingLasers;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightEvents.cs:201:                    float step = EnvironmentManager.CurrentEnvironmentParameters.RotatingLaserStep;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:16:    public static float DefaultSmallRingRotationSpeed => EnvironmentParameters.SmallRingRotationSpeed;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:17:    public static float DefaultSmallRingRotationAmount => EnvironmentParameters.SmallRingRotationAmount;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:18:    public static float DefaultSmallRingMaxStep => EnvironmentParameters.SmallRingMaxStep;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:19:    public static float DefaultSmallRingProp => EnvironmentParameters.SmallRingRotationProp;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:20:    public static float SmallRingStartAngle => EnvironmentParameters.SmallRingStartAngle;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:21:    public static float SmallRingStartStep => EnvironmentParameters.SmallRingStartStep;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:23:    public static float DefaultBigRingRotationSpeed => EnvironmentParameters.BigRingRotationSpeed;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:24:    public static float DefaultBigRingRotationAmount => EnvironmentParameters.BigRingRotationAmount;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:25:    public static float DefaultBigRingMaxStep => EnvironmentParameters.BigRingMaxStep;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:26:    public static float DefaultBigRingProp => EnvironmentParameters.BigRingRotationProp;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:27:    public static float BigRingStartAngle => EnvironmentParameters.BigRingStartAngle;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:28:    public static float BigRingStartStep => EnvironmentParameters.BigRingStartStep;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:30:    public static float DefaultZoomSpeed => EnvironmentParameters.ZoomSpeed;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:31:    public static float DefaultCloseZoomStep => EnvironmentParameters.CloseZoomStep;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:32:    public static float DefaultFarZoomStep => EnvironmentParameters.FarZoomStep;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:33:    public static bool StartRingZoomParity => EnvironmentParameters.StartRingZoomParity;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/RingManager.cs:36:    private static EnvironmentLightParameters EnvironmentParameters => EnvironmentManager.CurrentEnvironmentParameters;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:12:        get => _staticLights || Scrubbing || EnvironmentManager.CurrentSceneIndex < 0 || EnvironmentManager.Loading || SettingsManager.GetBool("staticlights", false);
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:60:    private static readonly string[] backLaserFlipEnvironments = new string[]
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:62:        "DragonsEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:63:        "FitBeatEnvironment"
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:417:        string environmentName = BeatmapManager.EnvironmentName;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:439:        if(EnvironmentManager.V3Environments.Contains(environmentName))
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:446:        FlipBackLasers = backLaserFlipEnvironments.Contains(environmentName);
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:474:        if(EnvironmentManager.CurrentSceneIndex >= 0 && !EnvironmentManager.Loading)
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:484:    private void UpdateEnvironment(int newEnvironmentIndex)
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:524:                EnvironmentLightParameters envParams = EnvironmentManager.DefaultEnvironmentParameters;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:547:        int laserCount = EnvironmentManager.CurrentEnvironmentParameters.RotatingLaserCount;
+source/Assets/__Scripts/Previewer/MapControl/Lightshow/LightManager.cs:611:        EnvironmentManager.OnEnvironmentUpdated += UpdateEnvironment;
+source/Assets/__Scripts/Previewer/MapControl/Objects/NoteManager.cs:21:    [Header("Materials")]
+source/Assets/__Scripts/Previewer/MapControl/Objects/NoteManager.cs:61:        UpdateMaterials();
+source/Assets/__Scripts/Previewer/MapControl/Objects/NoteManager.cs:65:    public void UpdateMaterials()
+source/Assets/__Scripts/Previewer/MapControl/Objects/ArcManager.cs:47:        UpdateMaterials();
+source/Assets/__Scripts/Previewer/MapControl/Objects/ArcManager.cs:51:    public void UpdateMaterials()
+source/Assets/__Scripts/Previewer/MapControl/Objects/ObjectManager.cs:281:        noteManager.UpdateMaterials();
+source/Assets/__Scripts/Previewer/MapControl/Objects/ObjectManager.cs:288:        arcManager.UpdateMaterials();
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:8:public class EnvironmentManager : MonoBehaviour
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:30:    public static event Action<int> OnEnvironmentUpdated;
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:32:    public static readonly string[] V2Environments = new string[]
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:34:        "DefaultEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:35:        "OriginsEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:36:        "TriangleEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:37:        "NiceEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:38:        "BigMirrorEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:39:        "DragonsEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:40:        "KDAEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:41:        "MonstercatEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:42:        "CrabRaveEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:43:        "PanicEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:44:        "RocketEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:45:        "GreenDayEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:46:        "GreenDayGrenadeEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:47:        "TimbalandEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:48:        "FitBeatEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:49:        "LinkinParkEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:50:        "BTSEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:51:        "KaleidoscopeEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:52:        "InterscopeEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:53:        "SkrillexEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:54:        "BillieEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:55:        "HalloweenEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:56:        "GagaEnvironment"
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:59:    public static readonly string[] V3Environments = new string[]
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:61:        "WeaveEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:62:        "PyroEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:63:        "EDMEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:64:        "TheSecondEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:65:        "LizzoEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:66:        "TheWeekndEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:67:        "RockMixtapeEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:68:        "Dragons2Environment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:69:        "Panic2Environment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:70:        "QueenEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:71:        "LinkinPark2Environment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:72:        "TheRollingStonesEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:73:        "LatticeEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:74:        "DaftPunkEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:75:        "HipHopEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:76:        "ColliderEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:77:        "BritneyEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:78:        "Monstercat2Environment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:79:        "MetallicaEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:80:        "GridEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:81:        "ColdplayEnvironment"
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:84:    private static readonly string[] supportedEnvironments = new string[]
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:86:        "DefaultEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:87:        "OriginsEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:88:        "TriangleEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:89:        "NiceEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:90:        "BigMirrorEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:91:        "DragonsEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:92:        "KDAEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:93:        "MonstercatEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:94:        "PanicEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:95:        "TimbalandEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:96:        "FitBeatEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:97:        "LinkinParkEnvironment",
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:98:        "KaleidoscopeEnvironment"
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:101:    private static readonly Dictionary<string, string> duplicateEnvironments = new Dictionary<string, string>
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:103:        {"CrabRaveEnvironment", "MonstercatEnvironment"}
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:106:    public static EnvironmentLightParameters CurrentEnvironmentParameters = new EnvironmentLightParameters();
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:107:    public static EnvironmentLightParameters DefaultEnvironmentParameters = new EnvironmentLightParameters();
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:109:    [SerializeField] private EnvironmentLightParameters[] EnvironmentParameters;
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:116:    private IEnumerator LoadEnvironment()
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:135:            AsyncOperation loadTask = SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:150:        Shader.SetGlobalFloat("_CustomFogAttenuation", 1f / CurrentEnvironmentParameters.FogAttenuation);
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:151:        Shader.SetGlobalFloat("_CustomFogOffset", CurrentEnvironmentParameters.FogOffset);
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:152:        Shader.SetGlobalFloat("_CustomFogHeightFogHeight", CurrentEnvironmentParameters.FogHeight);
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:153:        Shader.SetGlobalFloat("_CustomFogHeightFogStartY", CurrentEnvironmentParameters.FogStartY);
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:155:        Debug.Log("Environment loaded.");
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:158:        OnEnvironmentUpdated?.Invoke(CurrentSceneIndex);
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:162:    private void SetEnvironment(string environmentName)
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:166:            int customIndex = Mathf.Clamp(SettingsManager.GetInt("customenvironment"), 0, supportedEnvironments.Length - 1);
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:167:            environmentName = supportedEnvironments[customIndex];
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:170:        if(duplicateEnvironments.ContainsKey(environmentName))
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:173:            environmentName = duplicateEnvironments[environmentName];
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:182:            environmentName = supportedEnvironments[0];
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:194:            CurrentEnvironmentParameters = EnvironmentParameters.First(x => x.EnvironmentName == environmentName);
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:200:            CurrentEnvironmentParameters = new EnvironmentLightParameters();
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:205:            StartCoroutine(LoadEnvironment());
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:212:        string environmentName = BeatmapManager.EnvironmentName;
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:215:        if(duplicateEnvironments.ContainsKey(environmentName))
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:218:            environmentName = duplicateEnvironments[environmentName];
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:223:            DefaultEnvironmentParameters = EnvironmentParameters.First(x => x.EnvironmentName == environmentName);
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:228:            DefaultEnvironmentParameters = new EnvironmentLightParameters();
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:231:        SetEnvironment(environmentName);
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:239:            SetEnvironment(BeatmapManager.EnvironmentName);
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:255:public class EnvironmentLightParameters
+source/Assets/__Scripts/Previewer/MapControl/Environments/EnvironmentManager.cs:257:    public string EnvironmentName = "DefaultEnvironment";
+source/Assets/__Scripts/Previewer/MapControl/Replays/PlayerPositionManager.cs:218:        UpdateSaberMaterials();
+source/Assets/__Scripts/Previewer/MapControl/Replays/PlayerPositionManager.cs:270:    public void UpdateTrailMaterials()
+source/Assets/__Scripts/Previewer/MapControl/Replays/PlayerPositionManager.cs:285:    public void UpdateSaberMaterials()
+source/Assets/__Scripts/Previewer/MapControl/Replays/PlayerPositionManager.cs:299:        UpdateSaberMaterials();
+source/Assets/__Scripts/Previewer/MapControl/Replays/PlayerPositionManager.cs:300:        UpdateTrailMaterials();
+source/Assets/__Scripts/Previewer/MapControl/Replays/PlayerPositionManager.cs:316:            UpdateTrailMaterials();
+source/Assets/__Scripts/Settings/UpdateHandlers/ObjectSettingsUpdater.cs:79:                noteManager.UpdateMaterials();
+source/Assets/__Scripts/BeatmapData/Legacy/BeatmapInfoV2.cs:20:    public string _allDirectionsEnvironmentName;
+source/Assets/__Scripts/BeatmapData/Legacy/BeatmapInfoV2.cs:31:        || !string.IsNullOrEmpty(_allDirectionsEnvironmentName) || _difficultyBeatmapSets != null
+source/Assets/__Scripts/BeatmapData/Legacy/BeatmapInfoV2.cs:45:        _environmentName = "DefaultEnvironment";
+source/Assets/__Scripts/BeatmapData/Legacy/BeatmapInfoV2.cs:46:        _allDirectionsEnvironmentName = "GlassDesertEnvironment";
+source/Assets/__Scripts/BeatmapData/Legacy/BeatmapInfoV2.cs:83:        if(!environmentNames.Contains(_allDirectionsEnvironmentName))
+source/Assets/__Scripts/BeatmapData/Legacy/BeatmapInfoV2.cs:85:            environmentNames.Add(_allDirectionsEnvironmentName);
+source/Assets/__Scripts/BeatmapData/Legacy/BeatmapInfoV2.cs:125:                //Environment indexes need to be adjusted since the arrays don't
+source/Assets/__Scripts/BeatmapData/Legacy/BeatmapInfoV2.cs:139:                    environmentName = isAllDirections ? _allDirectionsEnvironmentName : _environmentName;
+source/Assets/__Scripts/BeatmapData/V4/BeatmapInfo.cs:39:        environmentNames = new string[1] {"DefaultEnvironment"};
+source/Assets/__Scripts/Loading/Files/MapFiles/DifficultyLoader.cs:212:        difficulty.environmentName = GetDifficultyEnvironmentName(mapData.Info, beatmap);
+source/Assets/__Scripts/Loading/Files/MapFiles/DifficultyLoader.cs:243:    private static string GetDifficultyEnvironmentName(BeatmapInfo info, DifficultyBeatmap beatmap)
+source/Assets/__Scripts/Loading/Files/MapFiles/DifficultyLoader.cs:248:            return EnvironmentManager.V2Environments[0];
+source/Assets/__Scripts/Loading/Files/MapFiles/DifficultyLoader.cs:255:            return EnvironmentManager.V2Environments[0];
+source/Assets/__Scripts/Loading/Web/URLParsing/UrlArgHandler.cs:459:            LoadMapFromCommandLineParameters(Environment.GetCommandLineArgs());
+
+== Build settings scenes ==
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/Previewer.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/_Scenes/Environments/DefaultEnvironment.unity
+    guid: 14595ce4a64730c4fa95eab14737c8c4
+  - enabled: 1
+    path: Assets/_Scenes/Environments/OriginsEnvironment.unity
+    guid: 5c4fb4001c5658a42891edf9361f9de9
+  - enabled: 1
+    path: Assets/_Scenes/Environments/TriangleEnvironment.unity
+    guid: 35b1185f5e6ffda4e9f1ecc81d1ac05b
+  - enabled: 1
+    path: Assets/_Scenes/Environments/NiceEnvironment.unity
+    guid: b3fd134932f542b4dbcb35ceb2fe1c99
+  - enabled: 1
+    path: Assets/_Scenes/Environments/BigMirrorEnvironment.unity
+    guid: a1d36d3b7f9e20843a1179e94e4cb689
+  - enabled: 1
+    path: Assets/_Scenes/Environments/DragonsEnvironment.unity
+    guid: 0b4a9be7fa59919449836dbb144574b6
+  - enabled: 1
+    path: Assets/_Scenes/Environments/KDAEnvironment.unity
+    guid: 1c6f8e561cab5d94fb2d65573fb063a2
+  - enabled: 1
+    path: Assets/_Scenes/Environments/MonstercatEnvironment.unity
+    guid: 4c743103f994ac94b97cc1343b13fb8f
+  - enabled: 1
+    path: Assets/_Scenes/Environments/PanicEnvironment.unity
+    guid: 742bfe360ce20d34bba24b92f0306b25
+  - enabled: 1
+    path: Assets/_Scenes/Environments/TimbalandEnvironment.unity
+    guid: 758ef0b843e4fdb4695b7a4f36e30224
+  - enabled: 1
+    path: Assets/_Scenes/Environments/FitBeatEnvironment.unity
+    guid: 6b6ac4ec54c26664da7540937865feb8
+  - enabled: 1
+    path: Assets/_Scenes/Environments/LinkinParkEnvironment.unity
+    guid: addf7f5f159b2de43abb22144500fb6b
+  - enabled: 1
+    path: Assets/_Scenes/Environments/KaleidoscopeEnvironment.unity
+    guid: bb40e7a3705aa6041a8624e7abd36bf8
+  m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
+
+== Package manifest ==
+{
+  "dependencies": {
+    "com.unity.2d.sprite": "1.0.0",
+    "com.unity.ai.navigation": "2.0.10",
+    "com.unity.collab-proxy": "2.11.3",
+    "com.unity.feature.development": "1.0.2",
+    "com.unity.ide.rider": "3.0.39",
+    "com.unity.ide.visualstudio": "2.0.26",
+    "com.unity.memoryprofiler": "1.1.9",
+    "com.unity.multiplayer.center": "1.0.0",
+    "com.unity.nuget.newtonsoft-json": "3.2.1",
+    "com.unity.render-pipelines.universal": "17.0.4",
+    "com.unity.test-framework": "1.6.0",
+    "com.unity.timeline": "1.8.10",
+    "com.unity.toolchain.linux-x86_64": "2.0.11",
+    "com.unity.toolchain.win-x86_64-linux-x86_64": "2.0.10",
+    "com.unity.ugui": "2.0.0",
+    "com.unity.visualscripting": "1.9.7",
+    "com.unity.modules.accessibility": "1.0.0",
+    "com.unity.modules.animation": "1.0.0",
+    "com.unity.modules.assetbundle": "1.0.0",
+    "com.unity.modules.audio": "1.0.0",
+    "com.unity.modules.imageconversion": "1.0.0",
+    "com.unity.modules.imgui": "1.0.0",
+    "com.unity.modules.jsonserialize": "1.0.0",
+    "com.unity.modules.particlesystem": "1.0.0",
+    "com.unity.modules.physics": "1.0.0",
+    "com.unity.modules.physics2d": "1.0.0",
+    "com.unity.modules.screencapture": "1.0.0",
+    "com.unity.modules.ui": "1.0.0",
+    "com.unity.modules.uielements": "1.0.0",
+    "com.unity.modules.umbra": "1.0.0",
+    "com.unity.modules.unityanalytics": "1.0.0",
+    "com.unity.modules.unitywebrequest": "1.0.0",
+    "com.unity.modules.unitywebrequestassetbundle": "1.0.0",
+    "com.unity.modules.unitywebrequestaudio": "1.0.0",
+    "com.unity.modules.unitywebrequesttexture": "1.0.0",
+    "com.unity.modules.unitywebrequestwww": "1.0.0",
+    "com.unity.modules.video": "1.0.0"
+  }
+}
