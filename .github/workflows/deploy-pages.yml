@@ -1,0 +1,39 @@
+name: Deploy ArcViewer to GitHub Pages
+
+on:
+  push:
+    branches: ["deploy"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout compiled ArcViewer
+        uses: actions/checkout@v4
+        with:
+          ref: deploy
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload compiled site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
