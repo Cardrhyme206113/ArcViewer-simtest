@@ -1,107 +1,192 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
   <title>ArcViewer</title>
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta content="ArcViewer" property="og:site_name">
   <meta content="3D Beat Saber map preview" property="og:title">
-  <meta content="View Beat Saber maps and BeatLeader replays directly in your browser, with accurately recreated visuals!" property="og:description">
-  <meta content="https://allpoland.github.io/ArcViewer/TemplateData/favicon.ico" property="og:image">
+  <meta content="View Beat Saber maps directly in your browser." property="og:description">
   <meta content="#B52A1C" data-react-helmet="true" name="theme-color">
-  <link rel="shortcut icon" href="TemplateData/favicon.ico" />
-  <link rel="stylesheet" href="TemplateData/style.css" />
+  <link rel="shortcut icon" href="TemplateData/favicon.ico">
+  <link rel="stylesheet" href="TemplateData/style.css">
+  <style>
+    html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#101116}
+    #bridge-wait{
+      position:fixed;inset:0;display:none;place-items:center;
+      color:#fff;font:600 15px/1.4 system-ui,-apple-system,Segoe UI,sans-serif;
+      background:#101116
+    }
+    #bridge-wait small{display:block;margin-top:7px;color:#aeb0ba;font-weight:500}
+  </style>
 </head>
-
-<body style="text-align: center; padding: 0; border: 0; margin: 0; width: 100vw; height: 100vh; overflow: hidden;">
-  <canvas id="unity-canvas" width=100% height=100%
-    style="width: 100%; height: 100%; background: #101116"></canvas>
+<body style="text-align:center;padding:0;border:0;margin:0;width:100vw;height:100vh;overflow:hidden;">
+  <canvas id="unity-canvas" width="100%" height="100%" style="width:100%;height:100%;background:#101116"></canvas>
   <div id="unity-loading-bar">
     <div id="unity-progress-bar-empty">
       <div id="unity-progress-bar-full"></div>
     </div>
   </div>
+  <div id="bridge-wait">
+    <div>Waiting for Simplified Sabers…<small>The generated map stays on this device.</small></div>
+  </div>
+
   <script src="TemplateData/Scripts/oggdecode.js"></script>
-  <script src="Build/ArcViewer.loader.js"></script>
   <script>
-    if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-      // Mobile device style: fill the whole browser client area with the game canvas:
-      var meta = document.createElement('meta');
-      meta.name = 'viewport';
-      meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-      document.getElementsByTagName('head')[0].appendChild(meta);
+    const SS_CACHE = "simplified-sabers-map-v1";
+    const params = new URLSearchParams(location.search);
+    const bridgeMode = params.get("bridge") === "1";
+    let gameInstance = null;
 
-      var canvas = document.querySelector("#unity-canvas");
-      canvas.style.width = "100%";
-      canvas.style.height = "100%";
-      canvas.style.position = "fixed";
-
-      document.body.style.textAlign = "left";
+    function postToParent(type, extra = {}) {
+      if (window.parent === window) return;
+      window.parent.postMessage({ type, ...extra }, "*");
     }
 
-    document.querySelector("#unity-loading-bar").style.display = "block";
+    async function registerMapServiceWorker() {
+      if (!("serviceWorker" in navigator)) {
+        throw new Error("Service workers are unavailable in this browser.");
+      }
+      const registration = await navigator.serviceWorker.register("./service-worker.js", { scope: "./" });
+      await navigator.serviceWorker.ready;
+      return registration;
+    }
 
-    var gameInstance = null;
-    createUnityInstance(document.querySelector("#unity-canvas"), {
-      dataUrl: "Build/ArcViewer.data",
-      frameworkUrl: "Build/ArcViewer.framework.js",
-      codeUrl: "Build/ArcViewer.wasm",
-      streamingAssetsUrl: "StreamingAssets",
-      companyName: "AllPolanDev",
-      productName: "ArcViewer",
-      productVersion: "0.7.7",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      }, (progress) => {
-        document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-      }).then((unityInstance) => {
-        document.querySelector("#unity-loading-bar").style.display = "none";
-        gameInstance = unityInstance;
-      }).catch((message) => {
-        alert(message);
-      });
-  </script>
-  <script>
-    const isSafari = navigator.userAgent.toLowerCase().indexOf('safari') !== -1 && navigator.userAgent.toLowerCase().indexOf('chrome') === -1;
+    async function cacheGeneratedMap(arrayBuffer) {
+      if (!(arrayBuffer instanceof ArrayBuffer)) {
+        throw new Error("Map payload is not an ArrayBuffer.");
+      }
+      if (arrayBuffer.byteLength < 32 || arrayBuffer.byteLength > 536870912) {
+        throw new Error("Map payload size is invalid.");
+      }
+
+      const token = (crypto.randomUUID ? crypto.randomUUID() :
+        `${Date.now()}-${Math.random().toString(16).slice(2)}`);
+      const mapUrl = new URL("./generated-map.zip", location.href);
+      mapUrl.searchParams.set("v", token);
+
+      const cache = await caches.open(SS_CACHE);
+      const oldRequests = await cache.keys();
+      await Promise.all(oldRequests.map(request => cache.delete(request)));
+
+      await cache.put(
+        mapUrl.href,
+        new Response(arrayBuffer, {
+          status: 200,
+          headers: {
+            "Content-Type": "application/zip",
+            "Content-Length": String(arrayBuffer.byteLength),
+            "Cache-Control": "no-store"
+          }
+        })
+      );
+      return mapUrl.href;
+    }
+
+    async function receiveGeneratedMap(event) {
+      const data = event.data;
+      if (!data || data.type !== "SIMPLIFIED_SABERS_LOAD_MAP") return;
+
+      try {
+        const mapUrl = await cacheGeneratedMap(data.bytes);
+        postToParent("SIMPLIFIED_ARCVIEWER_MAP_ACCEPTED");
+
+        const playbackUrl = new URL(location.href);
+        playbackUrl.search = "";
+        playbackUrl.searchParams.set("url", mapUrl);
+        playbackUrl.searchParams.set("noProxy", "true");
+        playbackUrl.searchParams.set("autoPlay", "true");
+        playbackUrl.searchParams.set("uiOff", data.uiOff === false ? "false" : "true");
+        playbackUrl.searchParams.set("mode", data.mode || "Standard");
+        playbackUrl.searchParams.set("difficulty", data.difficulty || "ExpertPlus");
+        playbackUrl.searchParams.set("ssPlay", "1");
+        location.replace(playbackUrl.href);
+      } catch (error) {
+        console.error(error);
+        postToParent("SIMPLIFIED_ARCVIEWER_ERROR", { message: error.message || String(error) });
+      }
+    }
+
+    async function startBridgeMode() {
+      document.querySelector("#unity-canvas").style.display = "none";
+      document.querySelector("#unity-loading-bar").style.display = "none";
+      document.querySelector("#bridge-wait").style.display = "grid";
+      window.addEventListener("message", receiveGeneratedMap);
+      try {
+        await registerMapServiceWorker();
+        postToParent("SIMPLIFIED_ARCVIEWER_READY");
+      } catch (error) {
+        console.error(error);
+        postToParent("SIMPLIFIED_ARCVIEWER_ERROR", { message: error.message || String(error) });
+      }
+    }
+
+    function startUnity() {
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        const meta = document.createElement("meta");
+        meta.name = "viewport";
+        meta.content = "width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes";
+        document.head.appendChild(meta);
+
+        const canvas = document.querySelector("#unity-canvas");
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.position = "fixed";
+        document.body.style.textAlign = "left";
+      }
+
+      document.querySelector("#unity-loading-bar").style.display = "block";
+      const loader = document.createElement("script");
+      loader.src = "Build/ArcViewer.loader.js";
+      loader.onload = () => {
+        createUnityInstance(document.querySelector("#unity-canvas"), {
+          dataUrl: "Build/ArcViewer.data",
+          frameworkUrl: "Build/ArcViewer.framework.js",
+          codeUrl: "Build/ArcViewer.wasm",
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "AllPolanDev",
+          productName: "ArcViewer",
+          productVersion: "0.7.7"
+        }, progress => {
+          document.querySelector("#unity-progress-bar-full").style.width = `${100 * progress}%`;
+        }).then(unityInstance => {
+          document.querySelector("#unity-loading-bar").style.display = "none";
+          gameInstance = unityInstance;
+          postToParent("SIMPLIFIED_ARCVIEWER_STARTED");
+        }).catch(message => {
+          postToParent("SIMPLIFIED_ARCVIEWER_ERROR", { message: String(message) });
+          alert(message);
+        });
+      };
+      loader.onerror = () => {
+        postToParent("SIMPLIFIED_ARCVIEWER_ERROR", { message: "Failed to load ArcViewer." });
+      };
+      document.body.appendChild(loader);
+    }
+
+    if (bridgeMode) startBridgeMode();
+    else startUnity();
+
+    const isSafari = navigator.userAgent.toLowerCase().includes("safari") &&
+      !navigator.userAgent.toLowerCase().includes("chrome");
 
     function ToggleFullscreen() {
-      if(!document.fullscreenEnabled) return;
-
-      if(document.fullscreenElement) {
-        if (document.cancelFullScreen) {
-          document.cancelFullScreen();
-        } else if (document.mozCancelFullScreen) {
-          document.mozCancelFullScreen();
-        } else if (document.webkitCancelFullScreen) {
-          document.webkitCancelFullScreen();
-        } else if (document.msExitFullscreen) {
-          document.msExitFullscreen();
-        }
-        gameInstance.SendMessage("FullScreenButton", "UpdateButton", 0);
+      if (!document.fullscreenEnabled) return;
+      if (document.fullscreenElement) {
+        if (document.exitFullscreen) document.exitFullscreen();
       } else {
-        const canvasElement = document.getElementById("unity-canvas");
-        if(!canvasElement) return;
-        if (canvasElement.requestFullScreen) {
-          canvasElement.requestFullScreen();
-        } else if (canvasElement.mozRequestFullScreen) {
-          canvasElement.mozRequestFullScreen();
-        } else if (canvasElement.webkitRequestFullScreen) {
-          canvasElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-        } else if (canvasElement.msRequestFullscreen) {
-          canvasElement.msRequestFullscreen();
-        }
+        const canvas = document.getElementById("unity-canvas");
+        if (canvas?.requestFullscreen) canvas.requestFullscreen();
       }
     }
 
     function HandleWindowKeydownEvent(event = {}) {
-      if(event.code === 'F11') {
+      if (event.code === "F11") {
         event.preventDefault();
         ToggleFullscreen();
       }
     }
-    window.addEventListener('keydown', HandleWindowKeydownEvent);
+    window.addEventListener("keydown", HandleWindowKeydownEvent);
   </script>
 </body>
-
 </html>
